@@ -14,6 +14,7 @@ app.use((req, res, next) => {
 })
 
 router.use('/tasks', require('./tasks'))
+router.use('/utils', require('./utils'))
 
 app.use(router)
 app.use((req, res) => {
