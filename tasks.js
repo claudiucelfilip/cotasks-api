@@ -14,6 +14,7 @@ const TaskSchema = new Schema({
   done: Boolean,
   dueDate: Date,
   startDate: Date,
+  duration: Number,
   color: String,
   meta: Object
 })
@@ -46,7 +47,7 @@ router.post('/', (req, res, next) => {
     done: false,
     meta: {}
   })
-
+  let repetitions = Math.ceil(payload.duration / payload.frequency)
   res.locals.promise = Task.insertMany(makeTasks(payload, 10))
   next()
 })

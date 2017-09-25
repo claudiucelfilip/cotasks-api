@@ -4,6 +4,7 @@ const router = express.Router()
 const bodyParser = require('body-parser')
 const PORT = process.env.PORT || 3000;
 
+
 app.use(bodyParser.json())
 
 app.use((req, res, next) => {
@@ -14,6 +15,7 @@ app.use((req, res, next) => {
 })
 
 router.use('/tasks', require('./tasks'))
+router.use('/backdrops', require('./backdrops'))
 router.use('/utils', require('./utils'))
 
 app.use(router)
@@ -31,5 +33,5 @@ app.use((req, res) => {
 })
 
 app.listen(PORT, () => {
-    console.log('Listening on', PORT)
+  console.log('Listening on', PORT)
 })
