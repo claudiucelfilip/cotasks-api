@@ -15,9 +15,9 @@ app.use((req, res, next) => {
   next()
 })
 
-router.use('/tasks', require('./tasks'))
-router.use('/backdrops', require('./backdrops'))
-router.use('/utils', require('./utils'))
+router.use('/tasks', require('./routes/tasks'))
+router.use('/backdrops', require('./routes/backdrops'))
+router.use('/utils', require('./routes/utils'))
 
 app.use(router)
 app.use((req, res) => {

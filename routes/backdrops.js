@@ -1,9 +1,10 @@
 const phantom = require('phantom');
 const router = require('express').Router()
 const fs = require('fs');
+const path = require('path');
 const request = require('request');
 const CHROMECAST_URL = 'https://clients3.google.com/cast/chromecast/home?slideshow-period=10';
-const BACKDROPS_DIR = './backdrops/';
+const BACKDROPS_DIR = path.join(__dirname, './backdrops/');
 
 function getImages () {
   setInterval(async function () {
